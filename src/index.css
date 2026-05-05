@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Montserrat:wght@300;500;700&family=Almarai:wght@300;400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", serif;
+  --font-arabic: "Almarai", sans-serif;
+
+  --color-gold: #8B7355;
+  --color-emerald: #064E3B;
+  --color-sand: #F3EFE9;
+  --color-paper: #F9F7F2;
+  --color-charcoal: #2D2926;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-charcoal font-sans;
+  }
+}
+
+.serif {
+  @apply font-display italic;
+}
+
+.luxury-gradient {
+  background: radial-gradient(circle at top right, #FDFBF7 0%, #F3EFE9 70%);
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #8B7355 0%,
+    #b59e7a 50%,
+    #8B7355 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
